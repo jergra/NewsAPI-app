@@ -1,20 +1,9 @@
 import React, {useState} from 'react'
+import terms from '../data/terms'
 
 const SearchForm = ({newSearch}) => {
 
-    const terms = ["music", "piano", "classical piano", 'diy', 'chess', 
-        'cameras', 'art', 'architecture', 
-        "cooking", 'cakes', 'cherries', "cheese", 'crops', 
-        'fishing', 'boats', "fitness", 'exercise', 'fat', 'healing', 
-        "coding", "react.js", 'javascript', "web development", 'the internet', "work", 'retirement', 
-        'renovation', 'construction', 'homesteading', 
-        'the sun', 'wilderness', "summer", 'spring', 
-        'California', 'China', "Germany", 'the Okanagan', 'Whistler', 'travel', 
-        "circles", "squares", "red", "teal", 
-        "covid", 'Canadian politics',
-        'brothers', 'women',
-        'mysteries', 'hovering', 'lamps', 'camels', 'coral', 'currencies', 'crests', 'crime', 
-        'cruelty', 'exclusion', 'kindness', 'thrones', 'harshness', 'hair', 'clapping']
+    // console.log('terms:', terms)
     
     let randomPosition = Math.floor(Math.random() * terms.length)
     const [query, setQuery] = useState(terms[randomPosition])

@@ -2,23 +2,12 @@ import React, {useState, useEffect} from 'react'
 import SearchForm from './SearchForm'
 import NewsItem from './NewsItem'
 import axios from 'axios'
+import terms from '../data/terms'
 
 const NewsList = () => {
 
-    const terms = ["piano", "classical piano", 'diy', 'chess', 'musique', 'fishing', 'boats', 
-        'cameras', 'art', 'architecture', 'kunst',
-        "cooking", 'cakes', 'cherries', "cheese", 'crops', 'cocina',
-        "fitness", 'exercise', 'fat', 'healing', 'gesundheit',
-        "coding", "react.js", 'javascript', "web development", 'the internet', "work", 'retirement', 
-        'renovation', 'construction', 'homesteading', 
-        'the sun', 'wilderness', "summer", 'spring', 'invierno',
-        'California', 'China', "Germany", 'the Okanagan', 'Whistler', 'viaggiare', 
-        "circles", "squares", "red", "teal", 'blau',
-        "covid", 'Canadian politics',
-        'brothers', 'women', 'ragazze',
-        'mysteries', 'salsa', 'lamps', 'camels', 'coral', 'currencies', 'crests', 'crime', 
-        'cruelty', 'exclusion', 'kindness', 'muebles', 'monde', 'hair', 'clapping']
-    
+    //console.log('terms:', terms)
+
     let randomPosition = Math.floor(Math.random() * terms.length)
     const [query, setQuery] = useState(terms[randomPosition])
     const [articles, setArticles] = useState([])
