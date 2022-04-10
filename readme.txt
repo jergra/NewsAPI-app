@@ -21,7 +21,7 @@ start:
     npm start
 
 deployed:
-    https://news-api-app.vercel.app/
+    https://news-api-app-beta.vercel.app/
 
 update:
     git add .

@@ -5,19 +5,19 @@ import axios from 'axios'
 
 const NewsList = () => {
 
-    const terms = ["music", "piano", "classical piano", 'diy', 'chess', 
-        'cameras', 'art', 'architecture', 
-        "cooking", 'cakes', 'cherries', "cheese", 'crops', 
-        'fishing', 'boats', "fitness", 'exercise', 'fat', 'healing', 
+    const terms = ["piano", "classical piano", 'diy', 'chess', 'musique', 'fishing', 'boats', 
+        'cameras', 'art', 'architecture', 'kunst',
+        "cooking", 'cakes', 'cherries', "cheese", 'crops', 'cocina',
+        "fitness", 'exercise', 'fat', 'healing', 'gesundheit',
         "coding", "react.js", 'javascript', "web development", 'the internet', "work", 'retirement', 
         'renovation', 'construction', 'homesteading', 
-        'the sun', 'wilderness', "summer", 'spring', 
-        'California', 'China', "Germany", 'the Okanagan', 'Whistler', 'travel', 
-        "circles", "squares", "red", "teal", 
+        'the sun', 'wilderness', "summer", 'spring', 'invierno',
+        'California', 'China', "Germany", 'the Okanagan', 'Whistler', 'viaggiare', 
+        "circles", "squares", "red", "teal", 'blau',
         "covid", 'Canadian politics',
-        'brothers', 'women',
-        'mysteries', 'hovering', 'lamps', 'camels', 'coral', 'currencies', 'crests', 'crime', 
-        'cruelty', 'exclusion', 'kindness', 'thrones', 'harshness', 'hair', 'clapping']
+        'brothers', 'women', 'ragazze',
+        'mysteries', 'salsa', 'lamps', 'camels', 'coral', 'currencies', 'crests', 'crime', 
+        'cruelty', 'exclusion', 'kindness', 'muebles', 'monde', 'hair', 'clapping']
     
     let randomPosition = Math.floor(Math.random() * terms.length)
     const [query, setQuery] = useState(terms[randomPosition])
@@ -26,9 +26,9 @@ const NewsList = () => {
     useEffect(() => { 
         const getArticles = async () => {
             const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
-            // console.log('response:', response)
-            // console.log('response.data.articles[0]:', response.data.articles[0])
-            // console.log('response.data.articles[0].description:', response.data.articles[0].description)
+            console.log('response:', response)
+            console.log('response.data.articles[0]:', response.data.articles[0])
+            console.log('response.data.articles[0].description:', response.data.articles[0].description)
             setArticles(response.data.articles)
         }
         getArticles()
