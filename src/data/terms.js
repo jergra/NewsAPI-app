@@ -10,8 +10,8 @@ const terms = [
     "circles", "squares", "red", "teal", 'blau',
     "covid", 'Canadian politics',
     'brothers', 'women', 'ragazze',
-    'mysteries', 'salsa', 'lamps', 'camels', 'coral', 'currencies', 'crests', 'crime', 
-    'cruelty', 'exclusion', 'kindness', 'muebles', 'monde', 'hair', 'clapping'
+    'mystery', 'salsa', 'lamps', 'camels', 'coral', 'currencies', 'crests', 'crime', 
+    'cruelty', 'exclusion', 'kindness', 'muebles', ' le monde', 'hair', 'clapping'
 ]
 
 export default terms

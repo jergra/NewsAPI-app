@@ -3,7 +3,7 @@ import terms from '../data/terms'
 
 const SearchForm = ({newSearch}) => {
 
-    // console.log('terms:', terms)
+    // console.log('terms in SearchForm.js:', terms)
     
     let randomPosition = Math.floor(Math.random() * terms.length)
     const [query, setQuery] = useState(terms[randomPosition])

@@ -2,6 +2,9 @@ April 9, 2022
 
 C:\dev\news-api-app 
 
+this app is also on the second computer at:
+    C:\webdev\news-api-app
+
 derived from tutorials:
     
     Create a News Website with Reactjs and NewsAPI
@@ -19,9 +22,6 @@ search term selected from a list of interests.
 
 start:
     npm start
-
-deployed:
-    https://news-api-app-beta.vercel.app/
 
 update:
     git add .

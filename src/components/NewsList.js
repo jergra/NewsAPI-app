@@ -6,7 +6,7 @@ import terms from '../data/terms'
 
 const NewsList = () => {
 
-    //console.log('terms:', terms)
+    //console.log('terms in NewsList.js:', terms)
 
     let randomPosition = Math.floor(Math.random() * terms.length)
     const [query, setQuery] = useState(terms[randomPosition])
