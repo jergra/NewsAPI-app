@@ -20,6 +20,9 @@ Use NewsAPI to search for news articles of interest.
 Enter a search term, or allow a random choice of a 
 search term selected from a list of interests.
 
+This app only works locally. For a deployed version to work 
+it would be necessary to pay a monthly fee to NewsAPI.
+
 start:
     npm start
 
