@@ -46,7 +46,7 @@ const NewsList = () => {
     useEffect(() => { 
         const getArticles = async () => {
             console.log('query in useEffect:', query)
-            const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.REACT_APP_NEWS_API_KEY_3}`)
+            const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
             console.log('response:', response)
             console.log('response.data.articles[0]:', response.data.articles[0])
             // console.log('response.data.articles[0].description:', response.data.articles[0].description)
