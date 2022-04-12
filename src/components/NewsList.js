@@ -6,67 +6,21 @@ import terms from '../data/terms'
 
 const NewsList = () => {
 
+    const [showTop, setShowTop] = useState(false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-const [showTop, setShowTop] = useState(false);
-
-useEffect(() => {
-    // const threshold = 0;
-    // let lastScrollY = window.pageYOffset;
-    // let ticking = false;
-  
-    // const updateScrollDir = () => {
-    //   const scrollY = window.pageYOffset;
-  
-    //   if (Math.abs(scrollY - lastScrollY) < threshold) {
-    //     ticking = false;
-    //     return;
-    //   }
-    //   setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
-    //   lastScrollY = scrollY > 0 ? scrollY : 0;
-    //   ticking = false;
-    // };
-  
-    const onScroll = () => {
-      console.log('scrolling detected')
-      console.log('window.pageYOffset:', window.pageYOffset)
-      if (window.pageYOffset > 10) {
-        setShowTop(true)
-      } else {
-        setShowTop(false)
-      }
-      
-      // if (!ticking) {
-      //   window.requestAnimationFrame(updateScrollDir);
-      //   ticking = true;
-      // }
-    };
-  
-    window.addEventListener("scroll", onScroll);
-    //console.log('scrollDir:', scrollDir);
-  
-    //return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  
-  
-  
-
-  
-
-
-
-
+    useEffect(() => {
+        const onScroll = () => {
+            console.log('window.pageYOffset:', window.pageYOffset)
+            if (window.pageYOffset > 10) {
+                setShowTop(true)
+            } else {
+                setShowTop(false)
+            }
+        };
+    
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     //console.log('terms in NewsList.js:', terms)
 
@@ -108,7 +62,7 @@ useEffect(() => {
         <div className="showcase">
             <div className="overlay px-5">
                
-                <div className="text-white mb-6 mt-60 text-5xl font-semibold capitalize">
+                <div className="text-white mb-6 mt-60 text-4xl font-semibold capitalize">
                     articles about {query}
                 </div>
                 
