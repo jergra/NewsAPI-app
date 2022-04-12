@@ -2,10 +2,13 @@ April 9, 2022
 
 C:\dev\news-api-app 
 
-this app is also on the second computer at:
+This app is also on the second computer at:
     C:\webdev\news-api-app
 
-derived from tutorials:
+    The plan at this time is to not update the second version.
+    The second version is not on github.
+
+Derived from tutorials:
     
     Create a News Website with Reactjs and NewsAPI
     https://www.youtube.com/watch?v=AfifHeANwe0

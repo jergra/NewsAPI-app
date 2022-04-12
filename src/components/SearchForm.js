@@ -4,9 +4,23 @@ import terms from '../data/terms'
 const SearchForm = ({newSearch}) => {
 
     // console.log('terms in SearchForm.js:', terms)
+
+    let oneOrTwo = Math.floor(Math.random() * 2 + 1)
+    console.log('one or two:', oneOrTwo)
     
-    let randomPosition = Math.floor(Math.random() * terms.length)
-    const [query, setQuery] = useState(terms[randomPosition])
+    if (oneOrTwo === 1) {
+        let randomPosition = Math.floor(Math.random() * terms.length)
+        var selected = terms[randomPosition]
+        console.log('one query term chosen in SearchForm:', selected)
+    }
+    if (oneOrTwo === 2) {
+        let randomPosition1 = Math.floor(Math.random() * terms.length)
+        let randomPosition2 = Math.floor(Math.random() * terms.length)
+        selected = terms[randomPosition1] + ' ' + terms[randomPosition2]
+        console.log('two query terms chosen in SearchForm:', selected)
+    }
+
+    const [query, setQuery] = useState(selected)
     
     const queryChangeHandler = (e) => {
         setQuery(e.target.value);

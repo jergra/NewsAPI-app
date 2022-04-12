@@ -3,28 +3,30 @@ import React from 'react'
 const NewsItem = ({index, article}) => {
     
   return (
-    <div className="bg-white p-4 mb-7"
+    <div className="bg-white mb-7"
         key={index}
     >
         <div 
             className="mb-5" 
         >
-            <img src={article.urlToImage} alt="" />
+            <a href={article.url} target='_blank' rel='noreferrer'>
+                <img src={article.urlToImage} alt="" />
+            </a>
         </div>
         <div
-            className="font-semibold mb-3 text-lg"
+            className="font-semibold mb-3 pl-4 pr-4 text-lg"
         >
-            {article.title}
+            <a href={article.url} target='_blank' rel='noreferrer'>{article.title}</a>
         </div>
         <div
-            className="mb-3"
+            className="mb-3 pl-4 pr-4"
         >
             {article.description}
         </div>
         <div
-            className="mb-3"
+            className="mb-3 text-gray-600 text-lg pl-4 pr-4 pb-4"
         >
-            <a className="text-teal-800" href={article.url}>{article.url}</a>
+            {article.source.name}
         </div>
     </div>
   )

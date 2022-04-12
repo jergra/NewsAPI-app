@@ -4,11 +4,11 @@ import './index.css'
 function App() {
 
   return (
-      
+    
     <div className="flex flex-col justify-center w-screen h-full bg-gray-400">
         <NewsList />
     </div>
-    
+  
   );
 }
 
