@@ -6,6 +6,68 @@ import terms from '../data/terms'
 
 const NewsList = () => {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+const [showTop, setShowTop] = useState(false);
+
+useEffect(() => {
+    // const threshold = 0;
+    // let lastScrollY = window.pageYOffset;
+    // let ticking = false;
+  
+    // const updateScrollDir = () => {
+    //   const scrollY = window.pageYOffset;
+  
+    //   if (Math.abs(scrollY - lastScrollY) < threshold) {
+    //     ticking = false;
+    //     return;
+    //   }
+    //   setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
+    //   lastScrollY = scrollY > 0 ? scrollY : 0;
+    //   ticking = false;
+    // };
+  
+    const onScroll = () => {
+      console.log('scrolling detected')
+      console.log('window.pageYOffset:', window.pageYOffset)
+      if (window.pageYOffset > 10) {
+        setShowTop(true)
+      } else {
+        setShowTop(false)
+      }
+      
+      // if (!ticking) {
+      //   window.requestAnimationFrame(updateScrollDir);
+      //   ticking = true;
+      // }
+    };
+  
+    window.addEventListener("scroll", onScroll);
+    //console.log('scrollDir:', scrollDir);
+  
+    //return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  
+  
+  
+
+  
+
+
+
+
+
     //console.log('terms in NewsList.js:', terms)
 
     let oneOrTwo = Math.floor(Math.random() * 2 + 1)
@@ -30,7 +92,7 @@ const NewsList = () => {
     useEffect(() => { 
         const getArticles = async () => {
             console.log('query in useEffect:', query)
-            const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
+            const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.REACT_APP_NEWS_API_KEY_3}`)
             console.log('response:', response)
             console.log('response.data.articles[0]:', response.data.articles[0])
             // console.log('response.data.articles[0].description:', response.data.articles[0].description)
@@ -57,7 +119,9 @@ const NewsList = () => {
             </div>
         </div>
       
-        <div className="ml-40 mr-40 mt-10">
+        <div 
+            className="ml-40 mr-40 mt-10"
+        >
             {articles.map((article, index) => (
                 <NewsItem 
                     key={index}
@@ -66,11 +130,19 @@ const NewsList = () => {
                 />
             ))}
         </div>
-        <div className='fixed bottom-5 right-5'>
-            <button className="bg-teal-700 text-white rounded font-bold pl-3 pt-1 pr-3 pb-1 text-sm">
-                <a href='#'>TOP</a>
-            </button>
+
+        {showTop ? (
+            <div className='fixed bottom-5 right-5'>
+            <a href='#'>
+                <button className="bg-teal-700 text-white rounded font-bold pl-3 pt-1 pr-3 pb-1 text-sm">
+                    TOP
+                </button>
+            </a>
         </div>
+        ) : (
+            <div></div>
+        )}
+        
       </>
   )
 }
